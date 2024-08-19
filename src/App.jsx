@@ -3,14 +3,22 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Button from "@mui/material/Button";
 import "./App.css";
-
+import { Stack } from "@mui/material";
+import Movie from "./components/perfil";
+import NavBar from "./components/navbar";
+import { Margin } from "@mui/icons-material";
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+      <Stack>
+        <NavBar></NavBar>
+      </Stack>
       <div>
-        <Button variant="contained">Hello world</Button>
+        <Stack>
+          <Movie></Movie>
+        </Stack>
       </div>
     </>
   );
