@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Perfil from "./components/perfil.jsx";
+import Movie from "./components/movie.jsx";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/Perfil",
-    element: <Perfil />,
+    element: <Movie />,
   },
 ]);
 

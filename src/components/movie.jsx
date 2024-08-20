@@ -9,15 +9,27 @@ import Typography from "@mui/material/Typography";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
-const Movie = () => {
+const Movie = (props) => {
   return (
     <>
-      <Grid item lg={3} md={4} sm={5} xs={8}>
-        <Card sx={{ maxWidth: 345, background: "#222" }}>
+      <Grid item lg={3} md={4} sm={6} xs={8}>
+        <Card
+          sx={{
+            maxWidth: 278,
+            background: "#222",
+            "&:hover": {
+              transition: "linear 0.3s",
+              minWidth: 300,
+              border: 2,
+              color: "#ed4b31",
+              position: "absolute",
+            },
+          }}
+        >
           <CardMedia
             sx={{ height: 350 }}
-            image="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE3NzY2MTYzNDg4MjE2ODY1Nw%3D%3D/original/a332d020-4315-4f63-af71-444d46474939.png?im_w=1440&im_q=highq"
-            title="green iguana"
+            image={props.image}
+            title={props.title}
           />
           <CardContent sx={{ color: "white" }}>
             <SkipPreviousIcon fontSize="large" />
@@ -26,10 +38,11 @@ const Movie = () => {
             <Typography
               gutterBottom
               variant="subtitle2"
-              component="p"
+              component="h4"
+              fontSize={"1.5rem"}
               fontWeight="bold"
             >
-              Pijamada en la casa compacta de Polly Pocket
+              {props.title}
             </Typography>
             <Typography gutterBottom variant="body2">
               Anfitrión: Polly PocketAnfitrión: Polly Pocket

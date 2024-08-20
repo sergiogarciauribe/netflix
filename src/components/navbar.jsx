@@ -13,7 +13,14 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
-const pages = ["Inicio", "Products", "Pricing", "Blog"];
+const pages = [
+  "Inicio",
+  "Series",
+  "Películas",
+  "Novedades Populares",
+  "Mi lista",
+  "Explorar por idiomas",
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
