@@ -12,7 +12,7 @@ import SkipNextIcon from "@mui/icons-material/SkipNext";
 const Movie = (props) => {
   return (
     <>
-      <Grid item lg={3} md={4} sm={6} xs={8}>
+      <Grid item lg={2} md={4} sm={6} xs={8}>
         <Card
           sx={{
             maxWidth: 278,
@@ -31,7 +31,7 @@ const Movie = (props) => {
             image={props.image}
             title={props.title}
           />
-          <CardContent sx={{ color: "white" }}>
+          <CardContent sx={{ color: "white", height: 170 }}>
             <SkipPreviousIcon fontSize="large" />
             <PlayCircleIcon fontSize="large" />
             <SkipNextIcon fontSize="large" />
@@ -44,16 +44,14 @@ const Movie = (props) => {
             >
               {props.title}
             </Typography>
-            <Typography gutterBottom variant="body2">
-              Anfitrión: Polly PocketAnfitrión: Polly Pocket
-            </Typography>
             <Typography
               gutterBottom
               variant="subtitle2"
               component="p"
               fontWeight="bold"
+              textTransform={"unset"}
             >
-              Abre el 21 de agosto
+              {props.genero}
             </Typography>
           </CardContent>
         </Card>

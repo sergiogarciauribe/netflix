@@ -63,10 +63,8 @@ function ResponsiveAppBar() {
           >
             <IconButton aria-label="" onClick={onclick}>
               <img
-                src="src\assets\netflix-transparent-netflix-free-free-png.webp"
+                src="https://mui.com/static/branding/companies/netflix.svg"
                 alt="logo"
-                width="140"
-                height="50"
               />
             </IconButton>
           </Typography>
