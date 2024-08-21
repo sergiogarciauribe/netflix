@@ -41,4 +41,22 @@ export const movies = [
     title: "Winnie The Pooh: Miel y Sangre 2",
     genero: "Terror",
   },
+  {
+    id: 8,
+    image: "https://image.tmdb.org/t/p/w185//qp9Q0JeHQ6JShQPm6KA8euYhWLF.jpg",
+    title: "Rambo 4: Regreso al infierno",
+    genero: "Acción - Belica",
+  },
+  {
+    id: 9,
+    image: "https://image.tmdb.org/t/p/w185//sRhG9FVei9YcTDsTaBAHRVhLlQs.jpg",
+    title: "Déja vu: Cambiando el pasado",
+    genero: "Acción -Ciencia ficción - Suspenso",
+  },
+  {
+    id: 10,
+    image: "https://image.tmdb.org/t/p/w185//kEQgDr7H3oVBTCF2SiirmZjy58W.jpg",
+    title: "Riddick: El amo de la oscuridad",
+    genero: "Acción -Ciencia ficción - Suspenso",
+  },
 ];

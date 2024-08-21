@@ -20,7 +20,6 @@ function App() {
         <Container maxWidth="xl">
           <video width="100%" height="auto" controls autoPlay muted loop>
             <source src="src\assets\videoplayback.mp4" type="video/mp4" />
-            Tu navegador no soporta la etiqueta de video.
           </video>
         </Container>
       </Stack>

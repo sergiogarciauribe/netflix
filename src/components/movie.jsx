@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, makeStyles } from "@mui/material";
+import { Grid, makeStyles, Container, Stack } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -7,8 +7,9 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import RecommendOutlinedIcon from "@mui/icons-material/RecommendOutlined";
+
 const Movie = (props) => {
   return (
     <>
@@ -32,9 +33,18 @@ const Movie = (props) => {
             title={props.title}
           />
           <CardContent sx={{ color: "white", height: 170 }}>
-            <SkipPreviousIcon fontSize="large" />
-            <PlayCircleIcon fontSize="large" />
-            <SkipNextIcon fontSize="large" />
+            <Stack
+              sx={{
+                display: "flex",
+                justifyContent: "flex-start",
+                flexDirection: "row",
+              }}
+            >
+              <PlayCircleIcon fontSize="large" />
+              <AddCircleOutlineIcon fontSize="large" />
+              <RecommendOutlinedIcon fontSize="large" />
+            </Stack>
+
             <Typography
               gutterBottom
               variant="subtitle2"
