@@ -17,7 +17,7 @@ function App() {
     <>
       <Stack>
         <ResponsiveAppBar />
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{}}>
           <video width="100%" height="auto" controls autoPlay muted loop>
             <source
               src="src\assets\Deadpool & Wolverine.mp4"
@@ -26,7 +26,14 @@ function App() {
           </video>
         </Container>
       </Stack>
-      <Grid container justifyContent={"center"} gap={1} marginTop={2}>
+      <Stack
+        sx={{
+          overflowX: "auto",
+          flexDirection: "row",
+          paddingX: 3,
+          paddingY: 3,
+        }}
+      >
         {ListMovies.map((movie) => (
           <Movie
             key={movie.id}
@@ -35,7 +42,25 @@ function App() {
             genero={movie.genero}
           />
         ))}
-      </Grid>
+      </Stack>
+      <Stack
+        sx={{
+          overflowX: "auto",
+          flexDirection: "row",
+          paddingX: 3,
+          paddingY: 3,
+          marginTop: 8,
+        }}
+      >
+        {ListMovies.map((movie) => (
+          <Movie
+            key={movie.id}
+            image={movie.image}
+            title={movie.title}
+            genero={movie.genero}
+          />
+        ))}
+      </Stack>
     </>
   );
 }
