@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RecommendOutlinedIcon from "@mui/icons-material/RecommendOutlined";
+import ExpandCircleDownOutlinedIcon from "@mui/icons-material/ExpandCircleDownOutlined";
 
 const Movie = (props) => {
   return (
@@ -36,13 +37,18 @@ const Movie = (props) => {
             <Stack
               sx={{
                 display: "flex",
-                justifyContent: "flex-start",
+                justifyContent: "space-between",
                 flexDirection: "row",
               }}
             >
-              <PlayCircleIcon fontSize="large" />
-              <AddCircleOutlineIcon fontSize="large" />
-              <RecommendOutlinedIcon fontSize="large" />
+              <Stack sx={{ flexDirection: "row" }}>
+                <PlayCircleIcon fontSize="large" />
+                <AddCircleOutlineIcon fontSize="large" />
+                <RecommendOutlinedIcon fontSize="large" />
+              </Stack>
+              <Stack>
+                <ExpandCircleDownOutlinedIcon fontSize="large" />
+              </Stack>
             </Stack>
 
             <Typography
