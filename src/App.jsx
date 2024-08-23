@@ -19,14 +19,9 @@ function App() {
     <>
       <Stack>
         <ResponsiveAppBar />
-        <Container maxWidth="xl" sx={{}}>
-          <video width="100%" height="auto" controls autoPlay muted loop>
-            <source
-              src="src\assets\Deadpool & Wolverine.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </Container>
+        <video width="100%" height="auto" controls autoPlay muted loop>
+          <source src="src\assets\Deadpool & Wolverine.mp4" type="video/mp4" />
+        </video>
       </Stack>
       <Container maxWidth="lg" sx={{ justifyContent: "center" }}>
         <Typography
@@ -54,11 +49,11 @@ function App() {
               background: "#f1f1f1",
             },
             "&::-webkit-scrollbar-thumb": {
-              backgroundColor: "#c61515",
+              backgroundColor: "#E50914",
               borderRadius: "0",
             },
             "&::-webkit-scrollbar-thumb:hover": {
-              backgroundColor: "#911111",
+              backgroundColor: "#bb0a13",
             },
           }}
         >
@@ -95,11 +90,11 @@ function App() {
               background: "#f1f1f1",
             },
             "&::-webkit-scrollbar-thumb": {
-              backgroundColor: "#c61515",
+              backgroundColor: "#E50914",
               borderRadius: "0",
             },
             "&::-webkit-scrollbar-thumb:hover": {
-              backgroundColor: "#911111",
+              backgroundColor: "#bb0a13",
             },
           }}
         >

@@ -45,7 +45,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="xl" sx={{ backgroundColor: "#222" }}>
         <Toolbar disableGutters>
           <Typography
@@ -129,7 +129,7 @@ function ResponsiveAppBar() {
           >
             <IconButton aria-label="" onClick={onclick}>
               <img
-                src="src\assets\netflix-transparent-netflix-free-free-png.webp"
+                src="https://mui.com/static/branding/companies/netflix.svg"
                 alt="logo"
                 width="140"
                 height="50"
