@@ -45,8 +45,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed">
-      <Container maxWidth="xl" sx={{ backgroundColor: "#222" }}>
+    <AppBar position="fixed" sx={{ backgroundColor: "#222" }}>
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -104,7 +104,9 @@ function ResponsiveAppBar() {
                 <MenuItem
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ textTransform: "lowercase" }}
+                  sx={{
+                    textTransform: "lowercase",
+                  }}
                 >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
@@ -146,6 +148,9 @@ function ResponsiveAppBar() {
                   color: "white",
                   display: "block",
                   textTransform: "initial",
+                  ":hover": {
+                    color: "#cda4a6",
+                  },
                 }}
               >
                 {page}

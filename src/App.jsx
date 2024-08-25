@@ -9,6 +9,7 @@ import Movie from "./components/movie";
 import { Margin } from "@mui/icons-material";
 import ResponsiveAppBar from "./components/navbar";
 import { series } from "./constant/series";
+import Titlemovie from "./components/titleMovie";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -17,12 +18,14 @@ function App() {
 
   return (
     <>
-      <Stack>
+      <Stack position={"relative"}>
         <ResponsiveAppBar />
         <video width="100%" height="auto" controls autoPlay muted loop>
           <source src="src\assets\Deadpool & Wolverine.mp4" type="video/mp4" />
         </video>
+        <Titlemovie />
       </Stack>
+
       <Container maxWidth="lg" sx={{ justifyContent: "center" }}>
         <Typography
           gutterBottom
