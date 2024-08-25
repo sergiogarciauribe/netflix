@@ -9,9 +9,9 @@ const Titlemovie = () => {
     <>
       <Stack
         position={"absolute"}
-        maxWidth={"400px"}
+        maxWidth={"500px"}
         sx={{
-          marginTop: { xs: "5rem", md: "10rem" },
+          marginTop: { xs: "5rem", md: "10rem", lg: "15rem" },
           marginX: { xs: "2rem", md: "5rem" },
         }}
       >
@@ -41,7 +41,7 @@ const Titlemovie = () => {
             color={"#fff"}
             textTransform={"uppercase"}
             paddingY={"1rem"}
-            sx={{ fontSize: { xs: "1rem", md: "1.5rem" } }}
+            sx={{ fontSize: { xs: "1rem", md: "1.5rem", lg: "2.2rem" } }}
           >
             deadpool & wolverine
           </Typography>
@@ -91,7 +91,7 @@ const Titlemovie = () => {
               textTransform: "initial",
               backgroundColor: "#fff",
               color: "#000",
-              paddingX: { xs: "0.5rem" },
+              paddingX: { xs: "0.5rem", md: "2rem" },
               marginRight: { xs: "0.5rem" },
               "&:hover": {
                 backgroundColor: "#e8d9d9db",
@@ -110,7 +110,7 @@ const Titlemovie = () => {
               textTransform: "initial",
               backgroundColor: "#a39696",
               color: "#fff",
-              paddingX: { xs: "0.5rem" },
+              paddingX: { xs: "0.5rem", md: "1.5rem" },
               marginRight: { xs: "0.5rem" },
               "&:hover": {
                 backgroundColor: "#3b393932",
