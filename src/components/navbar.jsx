@@ -133,8 +133,6 @@ function ResponsiveAppBar() {
               <img
                 src="https://mui.com/static/branding/companies/netflix.svg"
                 alt="logo"
-                width="140"
-                height="50"
               />
             </IconButton>
           </Typography>

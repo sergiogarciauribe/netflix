@@ -1,35 +1,36 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const Titlemovie = () => {
+  const isSmallScrren = useMediaQuery("(max-width:600px)");
+
   return (
     <>
       <Stack
         position={"absolute"}
-        marginTop={"10rem"}
-        marginX={"5rem"}
         maxWidth={"400px"}
+        sx={{
+          marginTop: { xs: "5rem", md: "10rem" },
+          marginX: { xs: "2rem", md: "5rem" },
+        }}
       >
         <Stack
           display={"felx"}
           justifyContent={"flex-start"}
           flexDirection={"row"}
+          alignItems={"center"}
+          sx={{ img: { xs: { width: "30px" }, sm: { width: "50px" } } }}
         >
-          <img
-            width="50px"
-            height="50px"
-            src="src\assets\netflix-icon.svg"
-            alt="netflix-icon"
-          />
+          <img src="src\assets\netflix-icon.svg" alt="netflix-icon" />
           <Typography
             variant="h2"
             color={"#bfb9b9"}
             textTransform={"uppercase"}
             fontWeight={"bold"}
-            fontSize={"2.5rem"}
             paddingLeft={"1rem"}
             alignItems={"center"}
+            sx={{ fontSize: { xs: "1rem", md: "2.5rem" } }}
           >
             película
           </Typography>
@@ -40,6 +41,7 @@ const Titlemovie = () => {
             color={"#fff"}
             textTransform={"uppercase"}
             paddingY={"1rem"}
+            sx={{ fontSize: { xs: "1rem", md: "1.5rem" } }}
           >
             deadpool & wolverine
           </Typography>
@@ -49,14 +51,17 @@ const Titlemovie = () => {
           flexDirection={"row"}
           alignItems={"center"}
           justifyContent={"flex-start"}
+          sx={{ img: { xs: { width: "20px" }, sm: { width: "35px" } } }}
         >
           <img
-            width="35px"
-            height="35px"
             src="https://www.netflix.com/tudum/top10/images/top10.png"
             alt="top-10"
           />
-          <Typography color={"#fff"} paddingLeft={"1rem"} fontSize={"1.8rem"}>
+          <Typography
+            color={"#fff"}
+            paddingLeft={"1rem"}
+            sx={{ fontSize: { xs: "0.8rem", md: "1.8rem" } }}
+          >
             N.°2 en películas hoy
           </Typography>
         </Stack>
@@ -65,6 +70,7 @@ const Titlemovie = () => {
           paddingY={"1rem"}
           color={"#fff"}
           fontFamily={"sans-serif"}
+          sx={{ display: { xs: "none", md: "inline" } }}
         >
           Wade Wilson, un mercenario con un humor sarcástico y habilidades
           regenerativas, se une a Logan, un mutante con garras de adamantium y
@@ -76,19 +82,21 @@ const Titlemovie = () => {
           display={"flex"}
           flexDirection={"row"}
           justifyContent={"space-between"}
+          sx={{ paddingY: { xs: "0.5rem" } }}
         >
           <Button
             startIcon={<PlayArrowIcon sx={{ fontSize: 46, color: "#000" }} />}
             sx={{
               fontWeight: "bold",
-              fontSize: "1rem",
               textTransform: "initial",
               backgroundColor: "#fff",
               color: "#000",
-              paddingX: "2rem",
+              paddingX: { xs: "0.5rem" },
+              marginRight: { xs: "0.5rem" },
               "&:hover": {
                 backgroundColor: "#e8d9d9db",
               },
+              fontSize: { xs: "0.7rem", md: "1rem" },
             }}
           >
             Reproducir
@@ -99,14 +107,15 @@ const Titlemovie = () => {
             }
             sx={{
               fontWeight: "bold",
-              fontSize: "1rem",
               textTransform: "initial",
               backgroundColor: "#a39696",
               color: "#fff",
-              paddingX: "2rem",
+              paddingX: { xs: "0.5rem" },
+              marginRight: { xs: "0.5rem" },
               "&:hover": {
                 backgroundColor: "#3b393932",
               },
+              fontSize: { xs: "0.7rem", md: "1rem" },
             }}
           >
             Más información
