@@ -45,7 +45,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "#222" }}>
+    <AppBar position="fixed" sx={{ backgroundColor: "rgb(20, 20, 20)" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -147,7 +147,7 @@ function ResponsiveAppBar() {
                   display: "block",
                   textTransform: "initial",
                   ":hover": {
-                    color: "#cda4a6",
+                    color: "#b3b3b3",
                   },
                 }}
               >
