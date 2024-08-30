@@ -4,6 +4,8 @@ import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Movie from "./components/movie.jsx";
+import ComponenteMaterialUi from "./components/ComponenteMaterialUI.jsx";
+import Books from "./components/books.jsx";
 
 const router = createBrowserRouter([
   {
@@ -11,8 +13,16 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/Perfil",
+    path: "/Películas",
     element: <Movie />,
+  },
+  {
+    path: "/ComponenteMateriaUi",
+    element: <ComponenteMaterialUi />,
+  },
+  {
+    path: "/books",
+    element: <Books />,
   },
 ]);
 

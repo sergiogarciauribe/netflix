@@ -10,6 +10,8 @@ import { Margin } from "@mui/icons-material";
 import ResponsiveAppBar from "./components/navbar";
 import { series } from "./constant/series";
 import Titlemovie from "./components/titleMovie";
+import ComponenteMaterialUi from "./components/ComponenteMaterialUI";
+import { Link } from "react-router-dom";
 function App() {
   const [count, setCount] = useState(0);
 

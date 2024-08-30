@@ -14,14 +14,16 @@ import MenuItem from "@mui/material/MenuItem";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AdbIcon from "@mui/icons-material/Adb";
+import { Link } from "react-router-dom";
 
 const pages = [
   "Inicio",
   "Series",
   "Películas",
   "Novedades Populares",
-  "Mi lista",
+  "books",
   "Explorar por idiomas",
+  "ComponenteMateriaUi",
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -140,12 +142,15 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
+                to={page}
+                component={Link}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
                   color: "white",
                   display: "block",
                   textTransform: "initial",
+                  textDecoration: "none",
                   ":hover": {
                     color: "#b3b3b3",
                   },
