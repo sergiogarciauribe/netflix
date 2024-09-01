@@ -11,40 +11,63 @@ import {
   Typography,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import FolderIcon from "@mui/icons-material/Folder";
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 const Demo = styled("div")(({ theme }) => ({
   backgroundColor: "#222",
 }));
 
+const books = [
+  {
+    id: 1,
+    title: 'Harry Potter',
+    autorBook: 'J.K RowLing',
+  },
+  {
+    id: 2,
+    title: 'The Lord of the Rings',
+    autorBook: 'J.R.R Tokien',
+  },
+  {
+    id: 3,
+    title: 'El señor de los anillos',
+    autorBook: 'J.R.R Tokien',
+  },
+
+]
+
+
 const Books = () => {
-  const [ListBooks, setBooks] = React.useState({});
+  const [ListBooks, setBooks] = React.useState(books);
 
   return (
     <>
       <Grid item xs={12} md={6}>
-        <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+        <Typography color={"#fff"} sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
           Avatar with text and icon
         </Typography>
         <Demo>
           <List>
-            <ListItem
+            {ListBooks.map((book) => (
+            <ListItem key={book.id}  sx={{color:"#fff"}}
               secondaryAction={
                 <IconButton edge="end" aria-label="delete">
-                  <DeleteIcon />
+                  <DeleteIcon sx={{color:"#fff" }}  />
                 </IconButton>
               }
             >
               <ListItemAvatar>
                 <Avatar>
-                  <FolderIcon />
+                  <MenuBookIcon/>
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText
-                primary="Single-line item"
-                secondary="Secondary text"
+              <ListItemText 
+                primary={book.title}
+                secondary={book.autorBook}
+                secondaryTypographyProps={{ color: '#ff2' }}
               />
             </ListItem>
+           ))}  
           </List>
         </Demo>
       </Grid>
