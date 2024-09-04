@@ -9,6 +9,7 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText,
+  Stack,
   styled,
   TextField,
   Typography,
@@ -91,17 +92,30 @@ const Books = () => {
             >
               Formulario
             </Typography>
-            <TextField
-              label="Titulo"
-              color="warning"
-              focused
-              id="outlined-size-small"
-              size="small"
-              placeholder="Titulo"
-              InputProps={{
-                style: { color: "#FFF" },
-              }}
-            />
+            <Stack display={"flex"} gap={2}>
+              <TextField
+                label="Titulo"
+                color="warning"
+                focused
+                id="outlined-size-small"
+                size="small"
+                placeholder="Titulo"
+                InputProps={{
+                  style: { color: "#FFF" },
+                }}
+              />
+              <TextField
+                label="Autor"
+                color="warning"
+                focused
+                id="outlined-size-small"
+                size="small"
+                placeholder="Autor"
+                InputProps={{
+                  style: { color: "#FFF" },
+                }}
+              />
+            </Stack>
           </Grid>
         </Grid>
       </Container>
