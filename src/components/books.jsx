@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   Avatar,
+  Button,
   colors,
   Container,
   Grid,
@@ -40,7 +41,29 @@ const books = [
 ];
 
 const Books = () => {
-  const [ListBooks, setBooks] = React.useState(books);
+  const [ListBooks, setListBooks] = React.useState(books);
+  const [bookFrom, setBookFrom] = React.useState({});
+
+  //Funcion para capturar los datos
+  const handleChange = (event) => {
+    const valueInput = event.target.value;
+    const nameInput = event.target.name;
+    setBookFrom({ ...bookFrom, [nameInput]: valueInput });
+  };
+
+  //Funcion para enviar los datos a la lista
+  const handleSubmit = () => {
+    const newBook = {
+      id: Date.now(),
+      title: bookFrom.title,
+      autorBook: bookFrom.autorBook,
+    };
+
+    setListBooks([...ListBooks, newBook]);
+
+    //Limpiar los datos
+    setBookFrom({});
+  };
 
   return (
     <>
@@ -97,6 +120,9 @@ const Books = () => {
                 label="Titulo"
                 color="warning"
                 focused
+                onChange={handleChange}
+                name="title"
+                value={bookFrom.title}
                 id="outlined-size-small"
                 size="small"
                 placeholder="Titulo"
@@ -108,6 +134,9 @@ const Books = () => {
                 label="Autor"
                 color="warning"
                 focused
+                onChange={handleChange}
+                name="autorBook"
+                value={bookFrom.autorBook}
                 id="outlined-size-small"
                 size="small"
                 placeholder="Autor"
@@ -115,6 +144,13 @@ const Books = () => {
                   style: { color: "#FFF" },
                 }}
               />
+              <Button
+                variant="outlined"
+                onClick={handleSubmit}
+                sx={{ backgroundColor: "#4f5dfa", color: "#fff" }}
+              >
+                Enviar
+              </Button>
             </Stack>
           </Grid>
         </Grid>
