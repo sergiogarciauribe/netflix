@@ -15,8 +15,9 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { MdDeleteSweep } from "react-icons/md";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import { MdEdit } from "react-icons/md";
 
 const Demo = styled("div")(({ theme }) => ({
   backgroundColor: "#222",
@@ -42,17 +43,44 @@ const books = [
 
 const Books = () => {
   const [ListBooks, setListBooks] = React.useState(books);
-  const [bookFrom, setBookFrom] = React.useState({});
+  const [bookFrom, setBookFrom] = React.useState({
+    id: "",
+    title: "",
+    autorBook: "",
+  });
 
   //Funcion para capturar los datos
   const handleChange = (event) => {
     const valueInput = event.target.value;
     const nameInput = event.target.name;
+    //Agregar datos al bookForm
     setBookFrom({ ...bookFrom, [nameInput]: valueInput });
   };
 
   //Funcion para enviar los datos a la lista
   const handleSubmit = () => {
+    if (!bookFrom.title || !bookFrom.autorBook) {
+      alert("Ingresa todos los datos");
+      return;
+    }
+
+    if (bookFrom.id) {
+      //Vamos a editar el elemento
+      //alert("Voy a editar");
+      const newList = ListBooks.map((book) => {
+        if (book.id === bookFrom.id) {
+          return bookFrom;
+        } else {
+          return book;
+        }
+      });
+
+      setListBooks(newList);
+      // Limpiar los datos
+
+      setBookFrom({ id: "", title: "", autorBook: "" });
+      return;
+    }
     const newBook = {
       id: Date.now(),
       title: bookFrom.title,
@@ -62,7 +90,17 @@ const Books = () => {
     setListBooks([...ListBooks, newBook]);
 
     //Limpiar los datos
-    setBookFrom({});
+    setBookFrom({ id: "", title: "", autorBook: "" });
+  };
+
+  const handleDelete = (bookId) => {
+    const newList = ListBooks.filter((book) => book.id !== bookId);
+    setListBooks(newList);
+  };
+
+  const handleEdit = (bookId) => {
+    const findbook = ListBooks.find((book) => book.id === bookId);
+    setBookFrom(findbook);
   };
 
   return (
@@ -85,9 +123,27 @@ const Books = () => {
                     key={book.id}
                     sx={{ color: "#fff" }}
                     secondaryAction={
-                      <IconButton edge="end" aria-label="delete">
-                        <DeleteIcon sx={{ color: "#fff" }} />
-                      </IconButton>
+                      <Stack
+                        display={"flex"}
+                        justifyContent={"center"}
+                        flexDirection={"row"}
+                        gap={1}
+                      >
+                        <IconButton
+                          edge="end"
+                          aria-label="delete"
+                          onClick={() => handleEdit(book.id)}
+                        >
+                          <MdEdit color="#fff" />
+                        </IconButton>
+                        <IconButton
+                          edge="end"
+                          aria-label="delete"
+                          onClick={() => handleDelete(book.id)}
+                        >
+                          <MdDeleteSweep color="#fff" />
+                        </IconButton>
+                      </Stack>
                     }
                   >
                     <ListItemAvatar>
