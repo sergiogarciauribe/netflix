@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Movie from "./components/movie.jsx";
 import ComponenteMaterialUi from "./components/ComponenteMaterialUI.jsx";
 import Books from "./components/books.jsx";
+import Anime from "./components/anime.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/books",
     element: <Books />,
+  },
+  {
+    path: "/Anime",
+    element: <Anime />,
   },
 ]);
 

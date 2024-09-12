@@ -22,6 +22,7 @@ const pages = [
   "Películas",
   "Novedades Populares",
   "books",
+  "Anime",
   "Explorar por idiomas",
   "ComponenteMateriaUi",
 ];

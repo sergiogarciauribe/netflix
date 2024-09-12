@@ -57,6 +57,35 @@ const Books = () => {
     setBookFrom({ ...bookFrom, [nameInput]: valueInput });
   };
 
+  const editBook = () => {
+    //Vamos a editar el elemento
+    //alert("Voy a editar");
+    const newList = ListBooks.map((book) => {
+      if (book.id === bookFrom.id) {
+        return bookFrom;
+      } else {
+        return book;
+      }
+    });
+
+    setListBooks(newList);
+    // Limpiar los datos
+
+    setBookFrom({ id: "", title: "", autorBook: "" });
+  };
+
+  const createBook = () => {
+    const newBook = {
+      id: Date.now(),
+      title: bookFrom.title,
+      autorBook: bookFrom.autorBook,
+    };
+    setListBooks([...ListBooks, newBook]);
+
+    //Limpiar los datos
+    setBookFrom({ id: "", title: "", autorBook: "" });
+  };
+
   //Funcion para enviar los datos a la lista
   const handleSubmit = () => {
     if (!bookFrom.title || !bookFrom.autorBook) {
@@ -65,32 +94,10 @@ const Books = () => {
     }
 
     if (bookFrom.id) {
-      //Vamos a editar el elemento
-      //alert("Voy a editar");
-      const newList = ListBooks.map((book) => {
-        if (book.id === bookFrom.id) {
-          return bookFrom;
-        } else {
-          return book;
-        }
-      });
-
-      setListBooks(newList);
-      // Limpiar los datos
-
-      setBookFrom({ id: "", title: "", autorBook: "" });
+      editBook();
       return;
     }
-    const newBook = {
-      id: Date.now(),
-      title: bookFrom.title,
-      autorBook: bookFrom.autorBook,
-    };
-
-    setListBooks([...ListBooks, newBook]);
-
-    //Limpiar los datos
-    setBookFrom({ id: "", title: "", autorBook: "" });
+    createBook();
   };
 
   const handleDelete = (bookId) => {
@@ -131,7 +138,7 @@ const Books = () => {
                       >
                         <IconButton
                           edge="end"
-                          aria-label="delete"
+                          aria-label="edit"
                           onClick={() => handleEdit(book.id)}
                         >
                           <MdEdit color="#fff" />
