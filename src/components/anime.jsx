@@ -5,12 +5,15 @@ import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import Typography from "@mui/material/Typography";
 import {
   Button,
   CardMedia,
   Container,
   Grid,
+  IconButton,
   Stack,
   styled,
   TextField,
@@ -85,7 +88,44 @@ const Anime = () => {
       escuela: AnimeFrom.escuela,
     };
     setPersonajes([...ListPersonajes, newAnime]);
+
+    //limpiar los datos
+    setAnimeFrom({ id: "", name: "", img: "", ki: "", escuela: "" });
   };
+
+  const editAnime = () => {
+    const newPersonaje = ListPersonajes.map((personaje) => {
+      if (personaje.id === AnimeFrom.id) {
+        return AnimeFrom;
+      } else {
+        return personaje;
+      }
+    });
+
+    setPersonajes(newPersonaje);
+  };
+  const handleSubmit = () => {
+    if (!AnimeFrom.name || !AnimeFrom.escuela || !AnimeFrom.ki) {
+      alert("Ingrese todos los datos");
+      return;
+    }
+    if (AnimeFrom.id) {
+      editAnime();
+      return;
+    }
+    createAnime();
+  };
+
+  const handleDelete = (animeId) => {
+    const newList = ListPersonajes.filter((anime) => anime.id !== animeId);
+    setPersonajes(newList);
+  };
+
+  const handleEdit = (animeId) => {
+    const newPersonaje = ListPersonajes.find((anime) => anime.id === animeId);
+    setAnimeFrom(newPersonaje);
+  };
+
   return (
     <Stack>
       <Stack marginTop={8}>
@@ -194,6 +234,20 @@ const Anime = () => {
                   component="li"
                   sx={{ borderColor: "rgba(239, 232, 232, 0.537)" }}
                 />
+                <Stack
+                  sx={{
+                    display: "felx",
+                    flexDirection: "row",
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <IconButton onClick={() => handleEdit(personaje.id)}>
+                    <EditIcon sx={{ color: "#fff" }} />
+                  </IconButton>
+                  <IconButton onClick={() => handleDelete(personaje.id)}>
+                    <DeleteForeverIcon sx={{ color: "#fff" }} />
+                  </IconButton>
+                </Stack>
               </List>
             ))}
           </Grid>
@@ -253,6 +307,8 @@ const Anime = () => {
                 component="label"
                 role={undefined}
                 variant="contaiinned"
+                name="img"
+                value={AnimeFrom.img}
                 tabIndex={-1}
                 startIcon={<CloudUploadIcon />}
                 sx={{
@@ -270,8 +326,7 @@ const Anime = () => {
               </Button>
               <Button
                 variant="outlined"
-                onClick={createAnime}
-                //onClick={handleSubmit}
+                onClick={handleSubmit}
                 sx={{ backgroundColor: "#4f5dfa", color: "#fff" }}
               >
                 Enviar
